@@ -17,6 +17,7 @@
     <modules>
         <module>front-server</module>
         <module>front-web</module>
+        <module>front-mobile</module>
     </modules>
 
     <properties>

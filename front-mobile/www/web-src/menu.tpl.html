@@ -7,23 +7,23 @@
     <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
   </ion-pane>
 
-  <ion-side-menu side="left">
-    <header class="bar bar-header bar-assertive">
+  <ion-side-menu side="left" class="dark-bg">
+    <header class="bar bar-header bar-dark">
       <h1 class="title">Menu</h1>
     </header>
     <ion-content class="has-header">
       <ion-list>
-        <ion-item nav-clear menu-close ng-click="login()">
-          Login
-        </ion-item>
-        <ion-item nav-clear menu-close href="#/app/recos">
+        <ion-item nav-clear menu-close href="#/app/recos" class="item-dark">
           Recos
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/profile">
+        <ion-item nav-clear menu-close href="#/app/profile" class="item-dark">
           Profile
         </ion-item>
-        <ion-item nav-clear menu-close ng-click="settings()">
+        <ion-item nav-clear menu-close ng-click="settings()" class="item-dark">
           Settings
+        </ion-item>
+        <ion-item nav-clear menu-close ng-click="login()" class="item-dark">
+          Logout
         </ion-item>
       </ion-list>
     </ion-content>

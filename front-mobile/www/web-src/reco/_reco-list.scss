@@ -25,7 +25,6 @@
   }
 
   .progressbar {
-
     background-color: wheat;
     height: 10px;
     margin: 5px 0;
@@ -38,6 +37,12 @@
       background: #66cc33;
       height: 100%;
     }
+  }
+
+  .followed-checkmark {
+    font-size: 20px;
+    float: right;
+    margin-right: 10px;
   }
 
 

@@ -22,12 +22,17 @@ angular.module('itrade-mobile').controller('recoListCtrl', function ($scope, $ti
         }, 1000);
     };
 
-    $scope.toggleReco = function(reco) {
+    $scope.toggleReco = function(reco, $event) {
+        if ($event.defaultPrevented) return;
         var oldValue = reco.selected;
         _.forEach($scope.recos, function(reco) {
             reco.selected = false;
         });
 
         reco.selected = !oldValue;
+    };
+    $scope.toggleFollow = function(reco, $event) {
+        $event.preventDefault();
+        reco.followed = !reco.followed;
     };
 });

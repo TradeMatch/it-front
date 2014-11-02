@@ -2,6 +2,11 @@ angular.module('itrade-mobile', ['ionic'])
 
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
+            .state('auth', {
+                url: "/auth",
+                templateUrl: "web-src/login/auth.tpl.html",
+                controller: 'authCtrl'
+            })
 
             .state('app', {
                 url: "/app",
@@ -46,7 +51,7 @@ angular.module('itrade-mobile', ['ionic'])
             });
 
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/app/recos');
+        $urlRouterProvider.otherwise('/auth');
     })
 
     .run(function ($ionicPlatform) {

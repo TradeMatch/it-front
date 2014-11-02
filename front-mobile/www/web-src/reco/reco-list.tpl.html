@@ -1,4 +1,4 @@
-<ion-view class="reco-list">
+<ion-view title="" class="reco-list dark-bg">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
     <div class="item-input-inset">
@@ -17,11 +17,11 @@
 
     </ion-refresher>
 
-    <div class="list list-inset">
+    <div class="list list-inset dark-bg">
 
       <ion-list>
         <ion-item ng-repeat="reco in recos" ng-click="toggleReco(reco, $event)"
-                  ng-class="{'item-accordion': reco.selected}">
+                  ng-class="{'item-accordion': reco.selected}" class="item-dark">
 
           <div class="reco-thumbnail">
             <div class="row">

@@ -1,0 +1,14 @@
+.menu {
+  .item-complex.item-dark.active > .item-content {
+    background-color: #383838;
+  }
+
+  .logout {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 10px;
+    z-index: 100;
+  }
+}

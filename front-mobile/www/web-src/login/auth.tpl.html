@@ -1,0 +1,31 @@
+<ion-view title="Sign In">
+  <ion-content class="main-login-page dark-bg" scroll="false">
+
+    <div class="logo positive">
+      <div><span class="calm">i</span>Trade</div>
+    </div>
+
+    <div class="list">
+      <label class="item item-input">
+        <i class="icon ion-person"></i>
+        <input type="text" placeholder="Username" ng-model="user.username">
+      </label>
+
+      <label class="item item-input">
+        <i class="icon ion-locked"></i>
+        <input type="password" placeholder="Password" ng-model="user.password">
+      </label>
+    </div>
+
+    <div class="control">
+      <button class="button button-block button-positive" ng-click="authenticateUser()">
+        SIGN IN
+      </button>
+
+      <button class="button button-block button-assertive" ng-click="authenticate('twitter')">
+        SIGN IN WITH TWITTER
+      </button>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,8 +1,8 @@
 <ion-side-menus>
 
-  <ion-pane ion-side-menu-content>
-    <ion-nav-bar class="bar-positive nav-title-slide-ios7">
-      <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button>
+  <ion-pane ion-side-menu-content >
+    <ion-nav-bar class="bar-dark nav-title-slide-ios7">
+      <!--<ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button>-->
     </ion-nav-bar>
     <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
   </ion-pane>
@@ -13,19 +13,22 @@
     </header>
     <ion-content class="has-header">
       <ion-list>
-        <ion-item nav-clear menu-close href="#/app/recos" class="item-dark">
+        <ion-item nav-clear menu-close ui-sref="app.recos" ui-sref-active="active" class="item-dark">
           Recos
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/profile" class="item-dark">
+        <ion-item nav-clear menu-close ui-sref="app.profile" ui-sref-active="active" class="item-dark">
           Profile
         </ion-item>
         <ion-item nav-clear menu-close ng-click="settings()" class="item-dark">
           Settings
         </ion-item>
-        <ion-item nav-clear menu-close ng-click="login()" class="item-dark">
-          Logout
-        </ion-item>
       </ion-list>
+
     </ion-content>
+    <div class="logout">
+      <a href="" class="button button-block button-assertive" ui-sref="auth"><i class="icon ion-log-out"></i> SIGN OUT</a>
+    </div>
+
+
   </ion-side-menu>
 </ion-side-menus>

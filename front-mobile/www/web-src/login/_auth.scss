@@ -1,0 +1,73 @@
+.main-login-page {
+  padding: 20px;
+
+  .logo {
+    margin: 25% auto 0;
+    text-align: center;
+
+    div {
+      display: inline;
+      font-size: 4em;
+      font-family: fantasy;
+      font-weight: 600;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      background: url('../img/a_logo.png');
+      width: 100px;
+      height: 100px;
+      background-size: 100px;
+      background-repeat: no-repeat;
+      margin: 45px auto;
+    }
+  }
+
+  .control {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+  }
+
+  label {
+    i {
+      color: #606170;
+      font-size: 1.4em;
+    }
+
+    &.item-input {
+      padding: 10px 0 4px 10px;
+      background: transparent;
+      border-width: 0 0 1px 0;
+      border-style: solid;
+      border-color: #606170;
+      ::-webkit-input-placeholder {
+        color: #acadb5;
+      }
+
+      :-moz-placeholder {
+        /* Firefox 18- */
+        color: #acadb5;
+      }
+
+      ::-moz-placeholder {
+        /* Firefox 19+ */
+        color: #acadb5;
+      }
+
+      :-ms-input-placeholder {
+        color: #acadb5;
+      }
+      input[type="text"],
+      input[type="password"] {
+        margin-left: 20px;
+        font-size: 16px;
+        color: #fff;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+
+}

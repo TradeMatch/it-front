@@ -3,7 +3,7 @@ angular.module('itrade-mobile').controller('recoListCtrl', function ($scope, $ti
         return new Date(new Date().getTime() + Math.floor( Math.random()*5000000000 ) );
     };
     $scope.recos = [
-        {selected: true, id: "7b9057b4", ticker: 'AAPL', when: generateDateInFuture(), recoPrice: 112,  priceTarget: 112, confidence: 67, followed: true, followers:873, consensus: 87, risk: 75, momentum: 46, starred: true, title: 'Apple' },
+        {id: "7b9057b4", ticker: 'AAPL', when: generateDateInFuture(), recoPrice: 112,  priceTarget: 112, confidence: 67, followed: true, followers:873, consensus: 87, risk: 75, momentum: 46, starred: true, title: 'Apple' },
         {id: "e1aa45da", ticker: 'AMZN', when: generateDateInFuture(), recoPrice: 86,   priceTarget: 86,  confidence: 19, followed:false, followers:112, starred:false, consensus: 87, risk: 75, momentum: 46, title: 'Amazon' },
         {id: "c9dd77e3", ticker: 'GOOG', when: generateDateInFuture(), recoPrice: 1021, priceTarget: 1021,confidence: 93, followed: true, followers:542, starred:false, consensus: 87, risk: 75, momentum: 46, title: 'Google' },
         {id: "06a80382", ticker: 'MSFT', when: generateDateInFuture(), recoPrice: 82,   priceTarget: 82,  confidence: 32, followed:false, followers:  2, starred:false, consensus: 87, risk: 75, momentum: 46, title: 'Microsoft' },

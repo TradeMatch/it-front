@@ -21,50 +21,92 @@
 
       <ion-list>
         <ion-item ng-repeat="reco in recos" ng-click="toggleReco(reco, $event)"
-                  ng-class="{'item-accordion': reco.selected}" class="item-thumbnail-left">
+                  ng-class="{'item-accordion': reco.selected}">
 
-          <div class="row">
-            <div class="col col-25"><a class="ticker positive" href="">{{reco.ticker}}</a></div>
-            <div class="col col-25">
+          <div class="reco-thumbnail">
+            <div class="row">
+              <div class="col col-25"><a class="ticker positive" href="">{{reco.ticker}}</a></div>
+              <div class="col col-25">
               <span class="icon buy"
                     ng-class="{'ion-ios7-star ': reco.starred, 'ion-ios7-star-outline': !reco.starred}"> Buy</span>
+              </div>
+              <div class="col col-20">when</div>
+              <div class="col col-30">{{reco.when | date:'shortDate'}}</div>
             </div>
-            <div class="col col-20">when</div>
-            <div class="col col-30">{{reco.when | date:'shortDate'}}</div>
+            <div class="row">
+              <div class="col col-20 col-offset-50">at</div>
+              <div class="col col-30">{{reco.recoPrice | currency}}</div>
+            </div>
+            <div class="row">
+              <div class="col col-50">Level of confidence</div>
+              <div class="col col-20">{{reco.confidence}}%</div>
+              <div class="col col-30">
+                <div class="progressbar">
+                  <span class="progress" ng-style="{width: '{{reco.confidence}}%'}"></span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-50">
+                <i class="icon ion-checkmark-round balanced followed-checkmark"
+                   ng-click="toggleFollow(reco, $event)"
+                   ng-if="reco.followed"></i>
+              </div>
+              <div class="col col-20" ng-click="toggleFollow(reco, $event)">
+                <a class="ticker positive" href="">
+                  <span ng-if="!reco.followed">Follow</span>
+                  <span ng-if="reco.followed">Unfollow</span>
+                </a>
+              </div>
+              <div class="col col-30">{{reco.followers}}</div>
+            </div>
           </div>
-          <div class="row">
-            <div class="col col-20 col-offset-50">at</div>
-            <div class="col col-30">{{reco.recoPrice | currency}}</div>
-          </div>
-          <div class="row">
-            <div class="col col-50">Level of confidence</div>
-            <div class="col col-20">{{reco.confidence}}%</div>
-            <div class="col col-30">
-              <div class="progressbar">
-                <span class="progress" ng-style="{width: '{{reco.confidence}}%'}"></span>
+
+          <!-- Extended -->
+          <div class="reco-extended">
+            <div class="row">
+              <div class="col col-33">
+                <div>Target: {{reco.priceTarget | currency}}</div>
+                <div>by <span class="analyst">{{'xxx'}}</span></div>
+              </div>
+              <div class="col col-67">
+                <div class="chart">
+                  <br><br><br><br><br><br><br>
+                </div>
+              </div>
+            </div>
+            <div class="ranges">
+              <div class="row row-center">
+                <div class="col">Analyst consensus</div>
+                <div class="col">
+                  <div class="range range-positive">
+                    <input type="range" name="volume" min="0" max="100" value="{{reco.consensus}}" disabled>
+                  </div>
+                </div>
+              </div>
+              <div class="row row-center">
+                <div class="col">Risk exposure</div>
+                <div class="col">
+                  <div class="range range-balanced">
+                    <input type="range" name="volume" min="0" max="100" value="{{reco.risk}}" disabled>
+                  </div>
+                </div>
+              </div>
+              <div class="row row-center">
+                <div class="col">Timing momentum</div>
+                <div class="col">
+                  <div class="range range-energized">
+                    <input type="range" name="volume" min="0" max="100" value="{{reco.momentum}}" disabled>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col col-50">
-              <i class="icon ion-checkmark-round balanced followed-checkmark"
-                 ng-click="toggleFollow(reco, $event)"
-                 ng-if="reco.followed"></i>
-            </div>
-            <div class="col col-20" ng-click="toggleFollow(reco, $event)">
-              <a class="ticker positive" href="">
-                <span ng-if="!reco.followed">Follow</span>
-                <span ng-if="reco.followed">Unfollow</span>
-              </a>
-            </div>
-            <div class="col col-30">{{reco.followers}}</div>
-          </div>
 
+          <!-- Options buttons-->
           <ion-option-button class="button button-assertive" ng-click="remove(reco)">
             Remove
           </ion-option-button>
-
-          <!-- <a class="button button-small" ng-href=#/app/playlists/{{reco.id}}">Details</a> -->
         </ion-item>
       </ion-list>
     </div>

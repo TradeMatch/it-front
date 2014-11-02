@@ -4,16 +4,38 @@
   }
   .item {
     height: 95px;
-    /* Set our transitions up. */
     -webkit-transition: height 0.8s;
     -moz-transition: height 0.8s;
     transition: height 0.8s;
     padding: 0;
+    margin-bottom: 5px;
 
     .col {
       padding: 0;
     }
 
+    .item-content {
+      padding: 2px;
+    }
+
+    &.ng-move,
+    &.ng-enter,
+    &.ng-leave {
+      -webkit-transition: all linear 0.3s;
+      transition: all linear 0.3s;
+    }
+
+    &.ng-leave.ng-leave-active,
+    &.ng-move {
+      opacity: 0;
+      left: -1000px;
+    }
+
+    &.ng-leave,
+    &.ng-move.ng-move-active {
+      opacity: 1;
+      left: 0;
+    }
   }
 
   .item-accordion {
@@ -40,13 +62,12 @@
   }
 
   .followed-checkmark {
-    font-size: 20px;
+    font-size: 1.2em;
     float: right;
-    margin-right: 10px;
+    margin-right: 7px;
   }
-
-
 }
+
 .bar-header .item-input-inset {
   input {
     z-index: 1;

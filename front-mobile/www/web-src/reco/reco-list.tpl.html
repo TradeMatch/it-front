@@ -20,17 +20,21 @@
     <div class="list list-inset">
 
       <ion-list>
-        <ion-item ng-repeat="reco in recos" ng-click="toggleReco(reco, $event)" ng-class="{'item-accordion': reco.selected}">
+        <ion-item ng-repeat="reco in recos" ng-click="toggleReco(reco, $event)"
+                  ng-class="{'item-accordion': reco.selected}" class="item-thumbnail-left">
 
           <div class="row">
             <div class="col col-25"><a class="ticker positive" href="">{{reco.ticker}}</a></div>
-            <div class="col col-25"><span class="icon buy" ng-class="{'ion-ios7-star ': reco.starred, 'ion-ios7-star-outline': !reco.starred}"> Buy</span></div>
+            <div class="col col-25">
+              <span class="icon buy"
+                    ng-class="{'ion-ios7-star ': reco.starred, 'ion-ios7-star-outline': !reco.starred}"> Buy</span>
+            </div>
             <div class="col col-20">when</div>
             <div class="col col-30">{{reco.when | date:'shortDate'}}</div>
           </div>
           <div class="row">
             <div class="col col-20 col-offset-50">at</div>
-            <div class="col col-30">{{reco.pt | currency}}</div>
+            <div class="col col-30">{{reco.recoPrice | currency}}</div>
           </div>
           <div class="row">
             <div class="col col-50">Level of confidence</div>
@@ -43,7 +47,7 @@
           </div>
           <div class="row">
             <div class="col col-50">
-              <i class="ion-checkmark-round balanced followed-checkmark"
+              <i class="icon ion-checkmark-round balanced followed-checkmark"
                  ng-click="toggleFollow(reco, $event)"
                  ng-if="reco.followed"></i>
             </div>
@@ -55,6 +59,10 @@
             </div>
             <div class="col col-30">{{reco.followers}}</div>
           </div>
+
+          <ion-option-button class="button button-assertive" ng-click="remove(reco)">
+            Remove
+          </ion-option-button>
 
           <!-- <a class="button button-small" ng-href=#/app/playlists/{{reco.id}}">Details</a> -->
         </ion-item>

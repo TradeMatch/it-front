@@ -6,7 +6,7 @@ angular.module('itrade-mobile', ['ionic'])
             .state('app', {
                 url: "/app",
                 abstract: true,
-                templateUrl: "web-src/menu.tpl.html",
+                templateUrl: "web-src/menu/menu.tpl.html",
                 controller: 'appCtrl'
             })
             .state('app.recos', {

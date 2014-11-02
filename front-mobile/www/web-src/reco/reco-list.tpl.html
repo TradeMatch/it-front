@@ -1,12 +1,59 @@
-<ion-view title="Recommendations">
+<ion-view class="reco-list">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    <div class="item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios7-search placeholder-icon"></i>
+        <input type="search" placeholder="Search">
+      </label>
+      <button class="button button-clear">Cancel</button>
+    </div>
   </ion-nav-buttons>
   <ion-content class="has-header">
-    <ion-list>
-      <ion-item ng-repeat="reco in recos" href="#/app/playlists/{{reco.id}}">
-        {{reco.title}}
-      </ion-item>
-    </ion-list>
+    <ion-refresher on-refresh="doRefresh()"
+                   pulling-text="Pull to refresh..."
+                   refreshing-text="Refreshing!"
+                   refreshing-icon="ion-loading-c">
+
+    </ion-refresher>
+
+    <div class="list list-inset">
+
+      <ion-list>
+        <ion-item ng-repeat="reco in recos" ng-click="toggleReco(reco)" ng-class="{'item-accordion': reco.selected}">
+
+          <div class="row">
+            <div class="col col-25"><a class="ticker positive" href="">{{reco.ticker}}</a></div>
+            <div class="col col-25"><span class="icon buy" ng-class="{'ion-ios7-star ': reco.starred, 'ion-ios7-star-outline': !reco.starred}"> Buy</span></div>
+            <div class="col col-20">when</div>
+            <div class="col col-30">{{reco.when | date:'shortDate'}}</div>
+          </div>
+          <div class="row">
+            <div class="col col-20 col-offset-50">at</div>
+            <div class="col col-30">{{reco.pt | currency}}</div>
+          </div>
+          <div class="row">
+            <div class="col col-50">Level of confidence</div>
+            <div class="col col-20">{{reco.confidence}}%</div>
+            <div class="col col-30">
+              <div class="progressbar">
+                <span class="progress" ng-style="{width: '{{reco.confidence}}%'}"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-20 col-offset-50">
+              <a class="ticker positive" href="">
+                <span ng-if="!reco.followed">Follow</span>
+                <span ng-if="reco.followed">Unfollow</span>
+              </a>
+            </div>
+            <div class="col col-30">{{reco.followers}}</div>
+          </div>
+
+          <!-- <a class="button button-small" ng-href=#/app/playlists/{{reco.id}}">Details</a> -->
+        </ion-item>
+      </ion-list>
+    </div>
   </ion-content>
 </ion-view>

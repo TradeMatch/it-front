@@ -1,0 +1,49 @@
+.reco-list {
+  .has-header {
+    top: 34px;
+  }
+  .item {
+    height: 95px;
+    /* Set our transitions up. */
+    -webkit-transition: height 0.8s;
+    -moz-transition: height 0.8s;
+    transition: height 0.8s;
+    padding: 0;
+
+    .col {
+      padding: 0;
+    }
+
+  }
+
+  .item-accordion {
+    height: 400px;
+
+    -webkit-transition: height 0.8s;
+    -moz-transition: height 0.8s;
+    transition: height 0.8s;
+  }
+
+  .progressbar {
+
+    background-color: wheat;
+    height: 10px;
+    margin: 5px 0;
+    border: 1px solid;
+    border-radius: 2px;
+
+    .progress {
+      display: block;
+      width: 70%;
+      background: #66cc33;
+      height: 100%;
+    }
+  }
+
+
+}
+.bar-header .item-input-inset {
+  input {
+    z-index: 1;
+  }
+}

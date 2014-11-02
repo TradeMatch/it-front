@@ -1,4 +1,4 @@
-angular.module('itrade-mobile', ['ionic', 'itrade-mobile.controllers', 'reco'])
+angular.module('itrade-mobile', ['ionic'])
 
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
@@ -7,25 +7,7 @@ angular.module('itrade-mobile', ['ionic', 'itrade-mobile.controllers', 'reco'])
                 url: "/app",
                 abstract: true,
                 templateUrl: "web-src/menu.tpl.html",
-                controller: 'AppCtrl'
-            })
-
-            .state('app.search', {
-                url: "/search",
-                views: {
-                    'menuContent': {
-                        templateUrl: "web-src/search.html"
-                    }
-                }
-            })
-
-            .state('app.browse', {
-                url: "/browse",
-                views: {
-                    'menuContent': {
-                        templateUrl: "web-src/browse.html"
-                    }
-                }
+                controller: 'appCtrl'
             })
             .state('app.recos', {
                 url: "/recos",
@@ -36,7 +18,23 @@ angular.module('itrade-mobile', ['ionic', 'itrade-mobile.controllers', 'reco'])
                     }
                 }
             })
-
+            .state('app.profile', {
+                url: "/profile",
+                views: {
+                    'menuContent': {
+                        templateUrl: "web-src/profile/profile.tpl.html",
+                        controller: 'profileCtrl'
+                    }
+                }
+            })
+            .state('app.browse', {
+                url: "/browse",
+                views: {
+                    'menuContent': {
+                        templateUrl: "web-src/browse.html"
+                    }
+                }
+            })
             .state('app.single', {
                 url: "/playlists/:playlistId",
                 views: {
@@ -46,6 +44,7 @@ angular.module('itrade-mobile', ['ionic', 'itrade-mobile.controllers', 'reco'])
                     }
                 }
             });
+
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/app/recos');
     })

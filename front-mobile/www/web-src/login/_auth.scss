@@ -1,8 +1,10 @@
 .main-login-page {
   padding: 20px;
-
+  .placeholder {
+    height: 10%;
+  }
   .logo {
-    margin: 25% auto 0;
+    margin: 70px 0 20px;
     text-align: center;
 
     div {
@@ -21,6 +23,14 @@
       background-size: 100px;
       background-repeat: no-repeat;
       margin: 45px auto;
+    }
+
+    @media screen and ( max-height: 600px ){
+      margin-top: 30px;
+
+      &:after {
+        display: none;
+      }
     }
   }
 

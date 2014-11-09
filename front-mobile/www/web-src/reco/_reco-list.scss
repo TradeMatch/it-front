@@ -3,7 +3,6 @@
     top: 34px;
   }
   .item {
-    max-height: 95px;
     -webkit-transition: max-height 0.8s;
     -moz-transition: max-height 0.8s;
     transition: max-height 0.8s;
@@ -33,10 +32,6 @@
     &.ng-move.ng-move-active {
       opacity: 1;
       left: 0;
-    }
-
-    .item-content {
-      min-height: auto;
     }
   }
 
@@ -73,7 +68,8 @@
 
   .reco-extended {
     border-top: 1px solid #ddd;
-    margin-top: 2px;
+    padding-top: 2px;
+
     .range {
       padding: 0;
       input {
@@ -87,7 +83,24 @@
     }
 
     .chart {
-      border: 1px dashed rgb(218, 218, 218);
+      border: 1px solid black;
+      border-radius: 2px;
+      height: 152px;
+    }
+
+    &.ng-enter, &.ng-leave {
+      -webkit-transition: max-height 0.5s;
+      transition: max-height 0.5s;
+    }
+
+    &.ng-enter,
+    &.ng-leave.ng-leave-active {
+      max-height: 0;
+    }
+
+    &.ng-leave,
+    &.ng-enter.ng-enter-active {
+      max-height: 300px;
     }
   }
 }

@@ -1,4 +1,4 @@
-angular.module('itrade-mobile', ['ionic'])
+angular.module('itrade-mobile', ['ionic', 'highcharts-ng'])
 
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider

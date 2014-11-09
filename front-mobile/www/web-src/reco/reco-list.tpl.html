@@ -21,7 +21,7 @@
 
       <ion-list>
         <ion-item ng-repeat="reco in recos" ng-click="toggleReco(reco, $event)"
-                  ng-class="{'item-accordion': reco.selected}" class="item-dark">
+                  class="item-dark">
 
           <div class="reco-thumbnail">
             <div class="row">
@@ -63,15 +63,15 @@
           </div>
 
           <!-- Extended -->
-          <div class="reco-extended">
+          <div class="reco-extended" ng-if="reco.selected">
             <div class="row">
               <div class="col col-33">
-                <div>Target: {{reco.priceTarget | currency}}</div>
+                <div>TP: {{reco.priceTarget | currency}}</div>
                 <div>by <span class="analyst">{{'xxx'}}</span></div>
               </div>
               <div class="col col-67">
                 <div class="chart">
-                  <br><br><br><br><br><br><br>
+                  <highchart config="chartConfig"></highchart>
                 </div>
               </div>
             </div>
@@ -80,7 +80,7 @@
                 <div class="col">Analyst consensus</div>
                 <div class="col">
                   <div class="range range-positive">
-                    <input type="range" name="volume" min="0" max="100" value="{{reco.consensus}}" disabled>
+                    <input type="range" name="volume" min="0" max="100" ng-model="reco.consensus" disabled>
                   </div>
                 </div>
               </div>
@@ -88,7 +88,7 @@
                 <div class="col">Risk exposure</div>
                 <div class="col">
                   <div class="range range-balanced">
-                    <input type="range" name="volume" min="0" max="100" value="{{reco.risk}}" disabled>
+                    <input type="range" name="volume" min="0" max="100" ng-model="reco.risk" disabled>
                   </div>
                 </div>
               </div>
@@ -96,7 +96,7 @@
                 <div class="col">Timing momentum</div>
                 <div class="col">
                   <div class="range range-energized">
-                    <input type="range" name="volume" min="0" max="100" value="{{reco.momentum}}" disabled>
+                    <input type="range" name="volume" min="0" max="100" ng-model="reco.momentum" disabled>
                   </div>
                 </div>
               </div>
@@ -104,9 +104,7 @@
           </div>
 
           <!-- Options buttons-->
-          <ion-option-button class="button button-assertive" ng-click="remove(reco)">
-            Remove
-          </ion-option-button>
+          <ion-option-button class="button button-assertive" ng-click="remove(reco)">Remove</ion-option-button>
         </ion-item>
       </ion-list>
     </div>

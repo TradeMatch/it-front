@@ -1,0 +1,130 @@
+.menu .item-complex.item-dark.active > .item-content {
+  background-color: #383838; }
+.menu .logout {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 10px;
+  z-index: 100; }
+
+.reco-list .has-header {
+  top: 34px; }
+.reco-list .item {
+  -webkit-transition: max-height 0.8s;
+  -moz-transition: max-height 0.8s;
+  transition: max-height 0.8s;
+  margin-bottom: 5px; }
+  .reco-list .item .col {
+    padding: 0; }
+  .reco-list .item .item-content {
+    padding: 2px; }
+  .reco-list .item.ng-move, .reco-list .item.ng-leave {
+    -webkit-transition: all linear 0.3s;
+    transition: all linear 0.3s; }
+  .reco-list .item.ng-leave.ng-leave-active, .reco-list .item.ng-move {
+    opacity: 0;
+    left: -1000px; }
+  .reco-list .item.ng-leave, .reco-list .item.ng-move.ng-move-active {
+    opacity: 1;
+    left: 0; }
+.reco-list .item-accordion {
+  max-height: 400px;
+  -webkit-transition: max-height 0.8s;
+  -moz-transition: max-height 0.8s;
+  transition: max-height 0.8s; }
+.reco-list .reco-thumbnail .progressbar {
+  background-color: wheat;
+  height: 10px;
+  margin: 5px 0;
+  border: 1px solid #000000;
+  border-radius: 2px; }
+  .reco-list .reco-thumbnail .progressbar .progress {
+    display: block;
+    width: 70%;
+    background: #66cc33;
+    height: 100%; }
+.reco-list .reco-thumbnail .followed-checkmark {
+  font-size: 1.2em;
+  float: right;
+  margin-right: 7px; }
+.reco-list .reco-extended {
+  border-top: 1px solid #ddd;
+  padding-top: 2px; }
+  .reco-list .reco-extended .range {
+    padding: 0; }
+    .reco-list .reco-extended .range input {
+      margin: 0;
+      height: 26px; }
+  .reco-list .reco-extended .ranges {
+    margin: 5px 0; }
+  .reco-list .reco-extended .chart {
+    border: 1px solid black;
+    border-radius: 2px;
+    height: 152px; }
+  .reco-list .reco-extended.ng-enter, .reco-list .reco-extended.ng-leave {
+    -webkit-transition: max-height 0.5s;
+    transition: max-height 0.5s; }
+  .reco-list .reco-extended.ng-enter, .reco-list .reco-extended.ng-leave.ng-leave-active {
+    max-height: 0; }
+  .reco-list .reco-extended.ng-leave, .reco-list .reco-extended.ng-enter.ng-enter-active {
+    max-height: 300px; }
+
+.bar-header .item-input-inset input {
+  z-index: 1; }
+
+.main-login-page {
+  padding: 20px; }
+  .main-login-page .placeholder {
+    height: 10%; }
+  .main-login-page .logo {
+    margin: 70px 0 20px;
+    text-align: center; }
+    .main-login-page .logo div {
+      display: inline;
+      font-size: 4em;
+      font-family: fantasy;
+      font-weight: 600; }
+    .main-login-page .logo:after {
+      content: "";
+      display: block;
+      background: url('../img/a_logo.png');
+      width: 100px;
+      height: 100px;
+      background-size: 100px;
+      background-repeat: no-repeat;
+      margin: 45px auto; }
+    @media screen and (max-height: 600px) {
+      .main-login-page .logo {
+        margin-top: 30px; }
+        .main-login-page .logo:after {
+          display: none; } }
+  .main-login-page .control {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    left: 20px; }
+  .main-login-page label i {
+    color: #606170;
+    font-size: 1.4em; }
+  .main-login-page label.item-input {
+    padding: 10px 0 4px 10px;
+    background: transparent;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: #606170; }
+    .main-login-page label.item-input ::-webkit-input-placeholder {
+      color: #acadb5; }
+    .main-login-page label.item-input :-moz-placeholder {
+      /* Firefox 18- */
+      color: #acadb5; }
+    .main-login-page label.item-input ::-moz-placeholder {
+      /* Firefox 19+ */
+      color: #acadb5; }
+    .main-login-page label.item-input :-ms-input-placeholder {
+      color: #acadb5; }
+    .main-login-page label.item-input input[type="text"], .main-login-page label.item-input input[type="password"] {
+      margin-left: 20px;
+      font-size: 16px;
+      color: #fff;
+      letter-spacing: 0.5px; }

@@ -9,8 +9,12 @@ target
 .settings
 src/main/webapp/META-INF
 .idea
+.tmp
 *.iml
 node_modules/
 bower_components/
 platforms/
 plugins/
+www/lib/
+front-web/.sass-cache
+front-mobile/www/lib
